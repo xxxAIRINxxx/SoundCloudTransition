@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         self.animator!.presentationBeforeHandler = {(containerView: UIView) in
             let containerViewHeight = modalVC!.containerView!.frame.size.height
             modalVC!.containerView!.frame.origin.y = -containerViewHeight
-            for subview in modalVC!.containerView!.subviews as [UIView] {
+            for subview in modalVC!.containerView!.subviews as! [UIView] {
                 subview.alpha = 0.5
             }
             
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         self.animator!.presentationAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = modalVC!.containerView!.frame.size.height
             modalVC!.containerView!.frame.origin.y = -containerViewHeight + containerViewHeight * percentComplete
-            for subview in modalVC!.containerView!.subviews as [UIView] {
+            for subview in modalVC!.containerView!.subviews as! [UIView] {
                 subview.alpha = 0.5 + 0.5 * percentComplete
             }
             
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         self.animator!.dismissalAnimationHandler = {(containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = modalVC!.containerView!.frame.size.height
             modalVC!.containerView!.frame.origin.y = -containerViewHeight
-            for subview in modalVC!.containerView!.subviews as [UIView] {
+            for subview in modalVC!.containerView!.subviews as! [UIView] {
                 subview.alpha = 0.5
             }
             
