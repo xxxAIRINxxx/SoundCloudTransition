@@ -97,25 +97,17 @@ UIGestureRecognizerDelegate {
     
     func fireBeforeHandler(containerView: UIView) {
         if self.isDismiss == false {
-            if let _presentationBeforeHandler = self.presentationBeforeHandler {
-                _presentationBeforeHandler(containerView: containerView)
-            }
+            self.presentationBeforeHandler?(containerView: containerView)
         } else {
-            if let _dismissalBeforeAnimationHandler = self.dismissalBeforeAnimationHandler {
-                _dismissalBeforeAnimationHandler(containerView: containerView)
-            }
+            self.dismissalBeforeAnimationHandler?(containerView: containerView)
         }
     }
     
     func fireAnimationHandler(containerView: UIView, percentComplete: CGFloat) {
         if self.isDismiss == false {
-            if let _presentationAnimationHandler = self.presentationAnimationHandler {
-                _presentationAnimationHandler(containerView: containerView, percentComplete: percentComplete)
-            }
+            self.presentationAnimationHandler?(containerView: containerView, percentComplete: percentComplete)
         } else {
-            if let _dismissalAnimationHandler = self.dismissalAnimationHandler {
-                _dismissalAnimationHandler(containerView: containerView, percentComplete: percentComplete)
-            }
+            self.dismissalAnimationHandler?(containerView: containerView, percentComplete: percentComplete)
         }
     }
     
@@ -126,25 +118,19 @@ UIGestureRecognizerDelegate {
             usingSpringWithDamping: self.usingSpringWithDamping,
             initialSpringVelocity: self.initialSpringVelocity,
             options: .CurveEaseOut,
-            animations: { () -> Void in
+            animations: {
                 if didComplete == true {
                     self.fireAnimationHandler(containerView, percentComplete: 1.0)
                 } else {
                     self.fireBeforeHandler(containerView)
                 }
-            }, completion: { (Bool) -> Void in
+            }, completion: { finished in
                 if self.isDismiss == false {
-                    if let _presentationCompletionHandler = self.presentationCompletionHandler {
-                        _presentationCompletionHandler(containerView: containerView, didComplete: didComplete)
-                    }
+                    self.presentationCompletionHandler?(containerView: containerView, didComplete: didComplete)
                 } else {
-                    if let _dismissalCompletionHandler = self.dismissalCompletionHandler {
-                        _dismissalCompletionHandler(containerView: containerView, didComplete: didComplete)
-                    }
+                    self.dismissalCompletionHandler?(containerView: containerView, didComplete: didComplete)
                 }
-                if let _completion = completion  {
-                    _completion()
-                }
+                completion?()
         })
     }
     
@@ -178,7 +164,7 @@ UIGestureRecognizerDelegate {
         self.animateWithDuration(
             self.transitionDuration(transitionContext),
             containerView: containerView,
-            didComplete: true) { () -> Void in
+            didComplete: true) {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
         }
     }
@@ -226,7 +212,7 @@ UIGestureRecognizerDelegate {
             self.animateWithDuration(
                 self.transitionDuration(transitionContext),
                 containerView: containerView,
-                didComplete: true) { () -> Void in
+                didComplete: true) {
                     transitionContext.completeTransition(true)
             }
         }
@@ -239,7 +225,7 @@ UIGestureRecognizerDelegate {
             self.animateWithDuration(
                 self.transitionDuration(transitionContext),
                 containerView: containerView,
-                didComplete: false) { () -> Void in
+                didComplete: false) {
                     transitionContext.completeTransition(false)
             }
         }
