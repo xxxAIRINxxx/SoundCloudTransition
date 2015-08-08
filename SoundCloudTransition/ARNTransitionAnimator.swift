@@ -155,12 +155,6 @@ UIGestureRecognizerDelegate {
         
         self.fireBeforeHandler(containerView)
         
-        if self.isDismiss == false {
-            containerView.addSubview(toVC.view)
-        } else {
-            containerView.bringSubviewToFront(fromVC.view)
-        }
-        
         self.animateWithDuration(
             self.transitionDuration(transitionContext),
             containerView: containerView,

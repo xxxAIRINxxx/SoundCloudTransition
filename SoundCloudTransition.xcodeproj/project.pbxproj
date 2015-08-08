@@ -83,7 +83,7 @@
 		563938A71A9DF716003BF0C9 /* SoundCloudTransition */ = {
 			isa = PBXGroup;
 			children = (
-				563939001A9F3C49003BF0C9 /* ARNTransitionAnimator.swift */,
+				91F37EB71B763C8800B15EBD /* Lib */,
 				563938AA1A9DF716003BF0C9 /* AppDelegate.swift */,
 				563938AC1A9DF716003BF0C9 /* ViewController.swift */,
 				563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */,
@@ -119,6 +119,14 @@
 				563938BF1A9DF716003BF0C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91F37EB71B763C8800B15EBD /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				563939001A9F3C49003BF0C9 /* ARNTransitionAnimator.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -337,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
