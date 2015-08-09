@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         self.animator!.presentationBeforeHandler = { [weak self] (containerView: UIView) in
             containerView.addSubview(modalVC!.view)
             
+            // Update Auto Layout
+            modalVC!.view.layoutIfNeeded()
+            
             let containerViewHeight = modalVC!.containerView!.frame.size.height
             modalVC!.containerView!.frame.origin.y = -containerViewHeight
             for subview in modalVC!.containerView!.subviews as! [UIView] {
