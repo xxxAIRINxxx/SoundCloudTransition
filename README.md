@@ -9,7 +9,7 @@ Custom Animation Transition for SoundCloud iOS App.
 ## Requirements
 
 * Xcode 6.4
-* iOS 8.1+
+* iOS 7.1+
 * Swift lang 1.2
 
 ## License
