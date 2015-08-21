@@ -4,13 +4,13 @@
 
 ![capture](capture.gif "capture")
 
-Custom Animation Transition for SoundCloud iOS App.
+Custom interactive transition like SoundCloud iOS App.
 
 ## Requirements
 
 * Xcode 6.4
 * iOS 7.1+
-* Swift lang 1.2
+* Swift 1.2
 
 ## License
 
