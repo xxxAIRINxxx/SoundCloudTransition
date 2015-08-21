@@ -13,89 +13,100 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var button : UIButton!
     
-    var animator : ARNTransitionAnimator?
+    var animator : ARNTransitionAnimator!
+    var modalVC : ModalViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupAnimator(false)
+        
+        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
+        self.modalVC.modalPresentationStyle = .Custom
+        
+        self.setupAnimator()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.animator.interactiveType = .Present
     }
     
     @IBAction func tapButton(sender: UIButton) {
-        self.setupAnimator(true)
+        self.animator.interactiveType = .None
+        self.presentViewController(self.modalVC, animated: true, completion: nil)
     }
 
-    func setupAnimator(isPreset: Bool) {
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        modalVC!.modalPresentationStyle = .Custom
+    func setupAnimator() {
+        self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: modalVC!)
         
-        self.animator = ARNTransitionAnimator(parentController: self, modalViewController: modalVC!)
-        
-        self.animator!.presentationBeforeHandler = { [weak self] (containerView: UIView) in
-            containerView.addSubview(modalVC!.view)
+        self.animator.presentationBeforeHandler = { [weak self] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
             
-            // Update Auto Layout
-            modalVC!.view.layoutIfNeeded()
+            containerView.addSubview(self!.modalVC.view)
             
-            let containerViewHeight = modalVC!.containerView!.frame.size.height
-            modalVC!.containerView!.frame.origin.y = -containerViewHeight
-            for subview in modalVC!.containerView!.subviews as! [UIView] {
+            self!.modalVC.view.layoutIfNeeded()
+            
+            let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            self!.modalVC.containerView.frame.origin.y = -containerViewHeight
+            for subview in self!.modalVC.containerView.subviews as! [UIView] {
                 subview.alpha = 0.5
             }
             
-            modalVC!.tabBar!.frame.origin.y = containerView.frame.size.height
-            modalVC!.tabBar!.alpha = 0.0
+            self!.modalVC.tabBar.frame.origin.y = containerView.frame.size.height
+            self!.modalVC.tabBar!.alpha = 0.0
             self!.button!.alpha = 1.0
             self!.imageView!.alpha = 1.0
             self!.imageView!.transform = CGAffineTransformIdentity
         }
         
-        self.animator!.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
-            let containerViewHeight = modalVC!.containerView!.frame.size.height
-            modalVC!.containerView!.frame.origin.y = -containerViewHeight + containerViewHeight * percentComplete
-            for subview in modalVC!.containerView!.subviews as! [UIView] {
+        self.animator.presentationCancelAnimationHandler = { [weak self] (containerView: UIView) in
+            let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            self!.modalVC.containerView.frame.origin.y = -containerViewHeight
+            for subview in self!.modalVC.containerView.subviews as! [UIView] {
+                subview.alpha = 0.5
+            }
+            
+            self!.modalVC.tabBar.frame.origin.y = containerView.frame.size.height
+            self!.modalVC.tabBar!.alpha = 0.0
+            self!.button!.alpha = 1.0
+            self!.imageView!.alpha = 1.0
+            self!.imageView!.transform = CGAffineTransformIdentity
+        }
+        
+        self.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
+            let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            self!.modalVC.containerView.frame.origin.y = -containerViewHeight + containerViewHeight * percentComplete
+            for subview in self!.modalVC.containerView.subviews as! [UIView] {
                 subview.alpha = 0.5 + 0.5 * percentComplete
             }
             
-            modalVC!.tabBar!.frame.origin.y = containerView.frame.size.height - modalVC!.tabBar!.frame.size.height * percentComplete
-            modalVC!.tabBar!.alpha = 1.0 * percentComplete
-            modalVC!.containerView!.alpha = 1.0 * percentComplete
+            self!.modalVC.tabBar.frame.origin.y = containerView.frame.size.height - self!.modalVC.tabBar.frame.size.height * percentComplete
+            self!.modalVC.tabBar.alpha = 1.0 * percentComplete
+            self!.modalVC.containerView.alpha = 1.0 * percentComplete
             self!.button.alpha = 1.0 - 1.5 * percentComplete
             self!.imageView.alpha = 1.0 - 0.2 * percentComplete
             self!.imageView.transform = CGAffineTransformIdentity
             self!.imageView.transform = CGAffineTransformScale(self!.imageView.transform, 1.0 - 0.1 * percentComplete, 1.0 - 0.1 * percentComplete)
         }
         
-        self.animator!.presentationCompletionHandler = { [weak self] (containerView: UIView, didComplete: Bool) in
-            if didComplete == false {
-                self!.setupAnimator(false)
-            }
+        self.animator.dismissalCompletionHandler = { [weak self] (containerView: UIView, completeTransition: Bool) in
+            self!.animator.interactiveType = .Present
         }
         
-        self.animator!.dismissalAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
-            containerView.bringSubviewToFront(modalVC!.view)
-            
-            let containerViewHeight = modalVC!.containerView!.frame.size.height
-            modalVC!.containerView!.frame.origin.y = -containerViewHeight
-            for subview in modalVC!.containerView!.subviews as! [UIView] {
+        self.animator.dismissalAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
+            let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            self!.modalVC.containerView.frame.origin.y = -containerViewHeight
+            for subview in self!.modalVC.containerView.subviews as! [UIView] {
                 subview.alpha = 0.5
             }
             
-            modalVC!.tabBar!.frame.origin.y = containerView.frame.size.height
-            modalVC!.tabBar!.alpha = 0.0
+            self!.modalVC.tabBar.frame.origin.y = containerView.frame.size.height
+            self!.modalVC.tabBar.alpha = 0.0
             self!.button.alpha = 1.0
             self!.imageView.alpha = 1.0
             self!.imageView.transform = CGAffineTransformIdentity
-            self!.setupAnimator(false)
         }
         
-        modalVC!.transitioningDelegate = self.animator!
-        
-        if isPreset == true {
-            self.presentViewController(modalVC!, animated: true, completion: nil)
-        } else {
-            self.animator!.needPresentationInteractive = true
-        }
+        self.modalVC.transitioningDelegate = self.animator
     }
 }
-

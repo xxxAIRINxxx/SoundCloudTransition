@@ -1,6 +1,6 @@
 //
 //  ARNTransitionAnimator.swift
-//  SoundCloudTransition
+//  ARNTransitionAnimator
 //
 //  Created by xxxAIRINxxx on 2015/02/26.
 //  Copyright (c) 2015 xxxAIRINxxx. All rights reserved.
@@ -16,76 +16,95 @@ public enum ARNTransitionAnimatorDirection: Int {
     case Right
 }
 
-public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition,
-    UIViewControllerAnimatedTransitioning,
-    UIViewControllerTransitioningDelegate,
-UIGestureRecognizerDelegate {
+public enum ARNTransitionAnimatorOperation: Int {
+    case None
+    case Push
+    case Pop
+    case Present
+    case Dismiss
+}
+
+public class ARNTransitionAnimator: UIPercentDrivenInteractiveTransition {
     
     public var direction : ARNTransitionAnimatorDirection = .Bottom
     public var panCompletionThreshold : CGFloat = 100.0
     
-    public var presentationBeforeHandler : ((containerView: UIView) ->())?
+    public var presentationBeforeHandler : ((containerView: UIView, transitionContext: UIViewControllerContextTransitioning) ->())?
     public var presentationAnimationHandler : ((containerView: UIView, percentComplete: CGFloat) ->())?
-    public var presentationCompletionHandler : ((containerView: UIView, didComplete: Bool) ->())?
+    public var presentationCancelAnimationHandler : ((containerView: UIView) ->())?
+    public var presentationCompletionHandler : ((containerView: UIView, completeTransition: Bool) ->())?
     
-    public var dismissalBeforeAnimationHandler : ((containerView: UIView) ->())?
+    public var dismissalBeforeHandler : ((containerView: UIView, transitionContext: UIViewControllerContextTransitioning) ->())?
     public var dismissalAnimationHandler : ((containerView: UIView, percentComplete: CGFloat) ->())?
-    public var dismissalCompletionHandler : ((containerView: UIView, didComplete: Bool) ->())?
+    public var dismissalCancelAnimationHandler : ((containerView: UIView) ->())?
+    public var dismissalCompletionHandler : ((containerView: UIView, completeTransition: Bool) ->())?
     
     public var usingSpringWithDamping : CGFloat = 1.0
     public var transitionDuration : NSTimeInterval = 0.5
     public var initialSpringVelocity : CGFloat = 0.1
     
-    public var needPresentationInteractive : Bool = false {
+    public var interactiveType : ARNTransitionAnimatorOperation = .None {
         didSet {
-            if self.needPresentationInteractive == true {
-                self.registerPanGesture()
-            } else {
+            if self.interactiveType == .None {
                 self.unregisterPanGesture()
-            }
-        }
-    }
-    public var needDismissalInteractive : Bool = false {
-        didSet {
-            if self.needDismissalInteractive == true {
-                self.registerPanGesture()
             } else {
-                self.unregisterPanGesture()
+                self.registerPanGesture()
             }
         }
     }
     
-    var parentController : UIViewController
-    var modalController : UIViewController
-    var gesture :UIPanGestureRecognizer?
-    var transitionContext : UIViewControllerContextTransitioning?
-    var isDismiss : Bool = false
-    var isInteractive : Bool = false
-    var panLocationStart : CGFloat = 0.0
+    private weak var fromVC : UIViewController!
+    private weak var toVC : UIViewController!
+    
+    private var operationType : ARNTransitionAnimatorOperation
+    private var isPresenting : Bool = true
+    
+    private var gesture :UIPanGestureRecognizer?
+    private var transitionContext : UIViewControllerContextTransitioning?
+    private var isInteractive : Bool = false
+    private var panLocationStart : CGFloat = 0.0
     
     deinit {
         self.unregisterPanGesture()
     }
     
-    public init(parentController: UIViewController,  modalViewController: UIViewController) {
-        self.parentController = parentController
-        self.modalController = modalViewController
-        self.modalController.modalPresentationStyle = .Custom
-    }
+    // MARK: Constructor
     
-    func registerPanGesture() {
-        if self.gesture == nil {
-            self.gesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
-            self.gesture!.delegate = self
-            if self.needPresentationInteractive == true {
-                self.parentController.view.addGestureRecognizer(self.gesture!)
-            } else if self.needDismissalInteractive == true {
-                self.modalController.view.addGestureRecognizer(self.gesture!)
-            }
+    public init(operationType: ARNTransitionAnimatorOperation, fromVC: UIViewController, toVC: UIViewController) {
+        self.operationType = operationType
+        self.fromVC = fromVC
+        self.toVC = toVC
+        // @see : http://stackoverflow.com/questions/24338700/from-view-controller-disappears-using-uiviewcontrollercontexttransitioning
+        //self.toVC.modalPresentationStyle = .Custom
+        
+        switch (self.operationType) {
+        case .Push, .Present:
+            self.isPresenting = true
+        case .Pop, .Dismiss:
+            self.isPresenting = false
+        case .None:
+            break
         }
     }
     
-    func unregisterPanGesture() {
+    // MARK: Private Methods
+    
+    private func registerPanGesture() {
+        self.unregisterPanGesture()
+        
+        self.gesture = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        self.gesture!.delegate = self
+        switch (self.interactiveType) {
+        case .Push, .Present:
+            self.fromVC.view.addGestureRecognizer(self.gesture!)
+        case .Pop, .Dismiss:
+            self.toVC.view.addGestureRecognizer(self.gesture!)
+        case .None:
+            break
+        }
+    }
+    
+    private func unregisterPanGesture() {
         if let _gesture = self.gesture {
             if let _view = _gesture.view {
                 _view.removeGestureRecognizer(_gesture)
@@ -95,23 +114,38 @@ UIGestureRecognizerDelegate {
         self.gesture = nil
     }
     
-    func fireBeforeHandler(containerView: UIView) {
-        if self.isDismiss == false {
-            self.presentationBeforeHandler?(containerView: containerView)
+    private func fireBeforeHandler(containerView: UIView, transitionContext: UIViewControllerContextTransitioning) {
+        if self.isPresenting {
+            self.presentationBeforeHandler?(containerView: containerView, transitionContext: transitionContext)
         } else {
-            self.dismissalBeforeAnimationHandler?(containerView: containerView)
+            self.dismissalBeforeHandler?(containerView: containerView, transitionContext: transitionContext)
         }
     }
     
-    func fireAnimationHandler(containerView: UIView, percentComplete: CGFloat) {
-        if self.isDismiss == false {
+    private func fireAnimationHandler(containerView: UIView, percentComplete: CGFloat) {
+        if self.isPresenting {
             self.presentationAnimationHandler?(containerView: containerView, percentComplete: percentComplete)
         } else {
             self.dismissalAnimationHandler?(containerView: containerView, percentComplete: percentComplete)
         }
     }
+
+    private func fireCancelAnimationHandler(containerView: UIView) {
+        if self.isPresenting {
+            self.presentationCancelAnimationHandler?(containerView: containerView)
+        } else {
+            self.dismissalCancelAnimationHandler?(containerView: containerView)
+        }
+    }
+    private func fireCompletionHandler(containerView: UIView, completeTransition: Bool) {
+        if self.isPresenting {
+            self.presentationCompletionHandler?(containerView: containerView, completeTransition: completeTransition)
+        } else {
+            self.dismissalCompletionHandler?(containerView: containerView, completeTransition: completeTransition)
+        }
+    }
     
-    func animateWithDuration(duration: NSTimeInterval, containerView: UIView, didComplete: Bool, completion: (() -> Void)?) {
+    private func animateWithDuration(duration: NSTimeInterval, containerView: UIView, completeTransition: Bool, completion: (() -> Void)?) {
         UIView.animateWithDuration(
             duration,
             delay: 0,
@@ -119,157 +153,29 @@ UIGestureRecognizerDelegate {
             initialSpringVelocity: self.initialSpringVelocity,
             options: .CurveEaseOut,
             animations: {
-                if didComplete == true {
+                if completeTransition {
                     self.fireAnimationHandler(containerView, percentComplete: 1.0)
                 } else {
-                    self.fireBeforeHandler(containerView)
+                    self.fireCancelAnimationHandler(containerView)
                 }
             }, completion: { finished in
-                if self.isDismiss == false {
-                    self.presentationCompletionHandler?(containerView: containerView, didComplete: didComplete)
-                } else {
-                    self.dismissalCompletionHandler?(containerView: containerView, didComplete: didComplete)
-                }
+                self.fireCompletionHandler(containerView, completeTransition: completeTransition)
                 completion?()
         })
     }
     
-    // MARK: UIViewControllerAnimatedTransitioning
-    
-    public func animationEnded(transitionCompleted: Bool) {
-        self.needPresentationInteractive = false
-        self.needDismissalInteractive = false
-        self.transitionContext = nil
-    }
-    
-    // MARK: UIViewControllerAnimatedTransitioning
-    
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return self.transitionDuration
-    }
-    
-    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        let containerView = transitionContext.containerView()
-        
-        self.fireBeforeHandler(containerView)
-        
-        self.animateWithDuration(
-            self.transitionDuration(transitionContext),
-            containerView: containerView,
-            didComplete: true) {
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-        }
-    }
-    
-    // MARK: UIViewControllerInteractiveTransitioning
-    
-    public override func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        let containerView = transitionContext.containerView()
-        
-        self.fireBeforeHandler(containerView)
-        self.transitionContext = transitionContext
-        
-        if self.isDismiss == false {
-            toVC.view.hidden = true
-            containerView.addSubview(toVC.view)
-        } else {
-            fromVC.view.hidden = true
-            containerView.bringSubviewToFront(fromVC.view)
-        }
-    }
-    
-    public override func updateInteractiveTransition(percentComplete: CGFloat) {
-        if let transitionContext = self.transitionContext {
-            
-            // FIXME! : deal for view is displayed only for a moment
-            let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-            let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-            if self.isDismiss == false {
-                toVC.view.hidden = false
-            } else {
-                fromVC.view.hidden = false
-            }
-            
-            let containerView = transitionContext.containerView()
-            self.fireAnimationHandler(containerView, percentComplete: percentComplete)
-        }
-    }
-    
-    public override func finishInteractiveTransition() {
-        if let transitionContext = self.transitionContext {
-            
-            let containerView = transitionContext.containerView()
-            self.animateWithDuration(
-                self.transitionDuration(transitionContext),
-                containerView: containerView,
-                didComplete: true) {
-                    transitionContext.completeTransition(true)
-            }
-        }
-    }
-    
-    public override func cancelInteractiveTransition() {
-        if let transitionContext = self.transitionContext {
-            
-            let containerView = transitionContext.containerView()
-            self.animateWithDuration(
-                self.transitionDuration(transitionContext),
-                containerView: containerView,
-                didComplete: false) {
-                    transitionContext.completeTransition(false)
-            }
-        }
-    }
-    
-    // MARK: UIViewControllerTransitioning Delegate
-    
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.isDismiss = false
-        return self
-    }
-    
-    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.isDismiss = true
-        return self
-    }
-    
-    public func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if self.needPresentationInteractive == true {
-            return self
-        }
-        return nil
-    }
-    
-    public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if self.needDismissalInteractive == true {
-            return self
-        }
-        return nil
-    }
-    
-    // MARK: Gesture Delegate
-    
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
-    }
-    
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
-    }
-    
     // MARK: Gesture
     
-    public func handlePan(recognizer: UIPanGestureRecognizer) {
+    func handlePan(recognizer: UIPanGestureRecognizer) {
         var window : UIWindow? = nil
         
-        if self.isDismiss == false {
-            window = self.parentController.view.window
-        } else {
-            window = self.modalController.view.window
+        switch (self.interactiveType) {
+        case .Push, .Present:
+            window = self.fromVC.view.window
+        case .Pop, .Dismiss:
+            window = self.toVC.view.window
+        case .None:
+            return
         }
         
         var location = recognizer.locationInView(window)
@@ -285,19 +191,30 @@ UIGestureRecognizerDelegate {
             case .Left, .Right:
                 self.panLocationStart = location.x
             }
-            if self.isDismiss == false {
-                self.parentController.presentViewController(self.modalController, animated: true, completion: nil)
-            } else {
-                self.modalController.dismissViewControllerAnimated(true, completion: nil)
+            
+            switch (self.interactiveType) {
+            case .Push:
+                self.fromVC.navigationController?.pushViewController(self.toVC, animated: true)
+            case .Present:
+                self.fromVC.presentViewController(self.toVC, animated: true, completion: nil)
+            case .Pop:
+                self.toVC.navigationController?.popViewControllerAnimated(true)
+            case .Dismiss:
+                self.toVC.dismissViewControllerAnimated(true, completion: nil)
+            case .None:
+                break
             }
         } else if recognizer.state == .Changed {
             var animationRatio: CGFloat = 0.0
             
             var bounds = CGRectZero
-            if self.isDismiss == false {
-                bounds = self.parentController.view.bounds
-            } else {
-                bounds = self.modalController.view.bounds
+            switch (self.interactiveType) {
+            case .Push, .Present:
+                bounds = self.fromVC.view.bounds
+            case .Pop, .Dismiss:
+                bounds = self.toVC.view.bounds
+            case .None:
+                break
             }
             
             switch self.direction {
@@ -330,5 +247,126 @@ UIGestureRecognizerDelegate {
             
             self.isInteractive = false
         }
+    }
+}
+
+// MARK: UIViewControllerAnimatedTransitioning
+
+extension ARNTransitionAnimator: UIViewControllerAnimatedTransitioning {
+    
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        return self.transitionDuration
+    }
+    
+    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView()
+        
+        self.transitionContext = transitionContext
+        self.fireBeforeHandler(containerView, transitionContext: transitionContext)
+        
+        self.animateWithDuration(
+            self.transitionDuration(transitionContext),
+            containerView: containerView,
+            completeTransition: true) {
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        }
+    }
+    
+    public func animationEnded(transitionCompleted: Bool) {
+        self.transitionContext = nil
+    }
+}
+
+// MARK: UIViewControllerTransitioningDelegate
+
+extension ARNTransitionAnimator: UIViewControllerTransitioningDelegate {
+    
+    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.isPresenting = true
+        return self
+    }
+    
+    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.isPresenting = false
+        return self
+    }
+    
+    public func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if self.gesture != nil && (self.interactiveType == .Push || self.interactiveType == .Present) {
+            self.isPresenting = true
+            return self
+        }
+        return nil
+    }
+    
+    public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if self.gesture != nil && (self.interactiveType == .Pop || self.interactiveType == .Dismiss) {
+            self.isPresenting = false
+            return self
+        }
+        return nil
+    }
+}
+
+// MARK: UIViewControllerInteractiveTransitioning
+
+extension ARNTransitionAnimator: UIViewControllerInteractiveTransitioning {
+    
+    public override func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
+        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let containerView = transitionContext.containerView()
+        
+        self.transitionContext = transitionContext
+        self.fireBeforeHandler(containerView, transitionContext: transitionContext)
+    }
+}
+
+// MARK: UIPercentDrivenInteractiveTransition
+
+extension ARNTransitionAnimator {
+    
+    public override func updateInteractiveTransition(percentComplete: CGFloat) {
+        if let transitionContext = self.transitionContext {
+            let containerView = transitionContext.containerView()
+            self.fireAnimationHandler(containerView, percentComplete: percentComplete)
+        }
+    }
+    
+    public override func finishInteractiveTransition() {
+        if let transitionContext = self.transitionContext {
+            let containerView = transitionContext.containerView()
+            self.animateWithDuration(
+                self.transitionDuration(transitionContext),
+                containerView: containerView,
+                completeTransition: true) {
+                    transitionContext.completeTransition(true)
+            }
+        }
+    }
+    
+    public override func cancelInteractiveTransition() {
+        if let transitionContext = self.transitionContext {
+            let containerView = transitionContext.containerView()
+            self.animateWithDuration(
+                self.transitionDuration(transitionContext),
+                containerView: containerView,
+                completeTransition: false) {
+                    transitionContext.completeTransition(false)
+            }
+        }
+    }
+}
+
+// MARK: UIGestureRecognizerDelegate
+
+extension ARNTransitionAnimator: UIGestureRecognizerDelegate {
+    
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
     }
 }
