@@ -40,6 +40,8 @@ class ViewController: UIViewController {
     func setupAnimator() {
         self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self, toVC: modalVC!)
         
+        // Present
+        
         self.animator.presentationBeforeHandler = { [weak self] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
             
             containerView.addSubview(self!.modalVC.view)
@@ -89,9 +91,7 @@ class ViewController: UIViewController {
             self!.imageView.transform = CGAffineTransformScale(self!.imageView.transform, 1.0 - 0.1 * percentComplete, 1.0 - 0.1 * percentComplete)
         }
         
-        self.animator.dismissalCompletionHandler = { [weak self] (containerView: UIView, completeTransition: Bool) in
-            self!.animator.interactiveType = .Present
-        }
+        // Dismiss
         
         self.animator.dismissalAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
@@ -105,6 +105,10 @@ class ViewController: UIViewController {
             self!.button.alpha = 1.0
             self!.imageView.alpha = 1.0
             self!.imageView.transform = CGAffineTransformIdentity
+        }
+        
+        self.animator.dismissalCompletionHandler = { [weak self] (containerView: UIView, completeTransition: Bool) in
+            self!.animator.interactiveType = .Present
         }
         
         self.modalVC.transitioningDelegate = self.animator
