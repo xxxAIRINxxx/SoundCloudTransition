@@ -4,7 +4,13 @@
 
 ![capture](capture.gif "capture")
 
-Custom interactive transition like SoundCloud iOS App.
+Custom interactive transition like SoundCloud iOS App. written in Swift.
+
+
+## Using Transition Animator
+
+[ARNTransitionAnimator](https://github.com/xxxAIRINxxx/ARNTransitionAnimator)
+
 
 ## Requirements
 
@@ -12,6 +18,7 @@ Custom interactive transition like SoundCloud iOS App.
 * iOS 7.1+
 * Swift 1.2
 
+
 ## License
 
-SoundCloudTransition is available under the MIT license. See the LICENSE file for more info.
+MIT license. See the LICENSE file for more info.
