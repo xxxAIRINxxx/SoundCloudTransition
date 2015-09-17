@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
         self.modalVC.modalPresentationStyle = .Custom
         
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight
-            for subview in self!.modalVC.containerView.subviews as! [UIView] {
+            for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5
             }
             
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         self.animator.presentationCancelAnimationHandler = { [weak self] (containerView: UIView) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight
-            for subview in self!.modalVC.containerView.subviews as! [UIView] {
+            for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5
             }
             
@@ -78,13 +78,12 @@ class ViewController: UIViewController {
         self.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight + containerViewHeight * percentComplete
-            for subview in self!.modalVC.containerView.subviews as! [UIView] {
+            for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5 + 0.5 * percentComplete
             }
             
             self!.modalVC.tabBar.frame.origin.y = containerView.frame.size.height - self!.modalVC.tabBar.frame.size.height * percentComplete
             self!.modalVC.tabBar.alpha = 1.0 * percentComplete
-            self!.modalVC.containerView.alpha = 1.0 * percentComplete
             self!.button.alpha = 1.0 - 1.5 * percentComplete
             self!.imageView.alpha = 1.0 - 0.2 * percentComplete
             self!.imageView.transform = CGAffineTransformIdentity
@@ -96,7 +95,7 @@ class ViewController: UIViewController {
         self.animator.dismissalAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight
-            for subview in self!.modalVC.containerView.subviews as! [UIView] {
+            for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5
             }
             
