@@ -1,0 +1,6 @@
+framework module Pods_SoundCloudTransition {
+  umbrella header "Pods-SoundCloudTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

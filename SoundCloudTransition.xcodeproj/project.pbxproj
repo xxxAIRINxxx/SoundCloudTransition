@@ -14,7 +14,7 @@
 		563938B51A9DF716003BF0C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 563938B31A9DF716003BF0C9 /* LaunchScreen.xib */; };
 		563938C11A9DF716003BF0C9 /* SoundCloudTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */; };
 		563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */; };
-		563939011A9F3C49003BF0C9 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563939001A9F3C49003BF0C9 /* ARNTransitionAnimator.swift */; };
+		7701C90EFD00DF35ECA147FC /* Pods_SoundCloudTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB86779A0B676B04A9EB83DB /* Pods_SoundCloudTransition.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7A575E131AA1A99A0068F641 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A575E121AA1A99A0068F641 /* image.jpg */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +40,10 @@
 		563938BF1A9DF716003BF0C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCloudTransitionTests.swift; sourceTree = "<group>"; };
 		563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		563939001A9F3C49003BF0C9 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNTransitionAnimator.swift; sourceTree = "<group>"; };
+		770DBE707E51141EB7BF8547 /* Pods-SoundCloudTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloudTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.release.xcconfig"; sourceTree = "<group>"; };
 		7A575E121AA1A99A0068F641 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		BA60EC88627FEB7819B6A94B /* Pods-SoundCloudTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloudTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		FB86779A0B676B04A9EB83DB /* Pods_SoundCloudTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloudTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7701C90EFD00DF35ECA147FC /* Pods_SoundCloudTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01FFD183A7A3478134A8F018 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA60EC88627FEB7819B6A94B /* Pods-SoundCloudTransition.debug.xcconfig */,
+				770DBE707E51141EB7BF8547 /* Pods-SoundCloudTransition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5639389C1A9DF716003BF0C9 = {
 			isa = PBXGroup;
 			children = (
 				563938A71A9DF716003BF0C9 /* SoundCloudTransition */,
 				563938BD1A9DF716003BF0C9 /* SoundCloudTransitionTests */,
 				563938A61A9DF716003BF0C9 /* Products */,
+				01FFD183A7A3478134A8F018 /* Pods */,
+				CE3BB1CF647B68CACDA56627 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +97,6 @@
 		563938A71A9DF716003BF0C9 /* SoundCloudTransition */ = {
 			isa = PBXGroup;
 			children = (
-				91F37EB71B763C8800B15EBD /* Lib */,
 				563938AA1A9DF716003BF0C9 /* AppDelegate.swift */,
 				563938AC1A9DF716003BF0C9 /* ViewController.swift */,
 				563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */,
@@ -121,12 +134,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		91F37EB71B763C8800B15EBD /* Lib */ = {
+		CE3BB1CF647B68CACDA56627 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				563939001A9F3C49003BF0C9 /* ARNTransitionAnimator.swift */,
+				FB86779A0B676B04A9EB83DB /* Pods_SoundCloudTransition.framework */,
 			);
-			name = Lib;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 563938C41A9DF716003BF0C9 /* Build configuration list for PBXNativeTarget "SoundCloudTransition" */;
 			buildPhases = (
+				1134E516B001EC65D6925441 /* Check Pods Manifest.lock */,
 				563938A11A9DF716003BF0C9 /* Sources */,
 				563938A21A9DF716003BF0C9 /* Frameworks */,
 				563938A31A9DF716003BF0C9 /* Resources */,
+				D669498F0B3D88F3C579E8FE /* Embed Pods Frameworks */,
+				DDDC1BE7593700540F15AFDC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +243,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1134E516B001EC65D6925441 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D669498F0B3D88F3C579E8FE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDDC1BE7593700540F15AFDC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		563938A11A9DF716003BF0C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,7 +298,6 @@
 			files = (
 				563938AD1A9DF716003BF0C9 /* ViewController.swift in Sources */,
 				563938AB1A9DF716003BF0C9 /* AppDelegate.swift in Sources */,
-				563939011A9F3C49003BF0C9 /* ARNTransitionAnimator.swift in Sources */,
 				563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -348,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -357,6 +420,7 @@
 		};
 		563938C51A9DF716003BF0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA60EC88627FEB7819B6A94B /* Pods-SoundCloudTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SoundCloudTransition/Info.plist;
@@ -368,6 +432,7 @@
 		};
 		563938C61A9DF716003BF0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 770DBE707E51141EB7BF8547 /* Pods-SoundCloudTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SoundCloudTransition/Info.plist;
