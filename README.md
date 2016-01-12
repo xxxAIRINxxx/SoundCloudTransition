@@ -8,6 +8,9 @@
 
 Custom interactive transition like SoundCloud iOS App. written in Swift.
 
+## Demo
+
+[See demo on Appetize.io](https://appetize.io/app/6arnwv9a9c5k32jy4pn82n0vv8?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
 
 ## Using Transition Animator
 
