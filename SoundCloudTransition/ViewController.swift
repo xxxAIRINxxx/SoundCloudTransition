@@ -22,15 +22,21 @@ class ViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         self.modalVC = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .Custom
+        self.modalVC.modalPresentationStyle = .FullScreen
         
         self.setupAnimator()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        print("ViewController viewWillAppear")
         
         self.animator.interactiveType = .Present
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController viewWillDisappear")
     }
     
     @IBAction func tapButton(sender: UIButton) {
@@ -78,6 +84,7 @@ class ViewController: UIViewController {
         
         self.animator.presentationAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight + containerViewHeight * percentComplete
             for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5 + 0.5 * percentComplete
@@ -95,6 +102,9 @@ class ViewController: UIViewController {
         
         self.animator.dismissalAnimationHandler = { [weak self] (containerView: UIView, percentComplete: CGFloat) in
             let containerViewHeight = self!.modalVC.containerView.frame.size.height
+            
+            containerView.addSubview(self!.view)
+            
             self!.modalVC.containerView.frame.origin.y = -containerViewHeight
             for subview in self!.modalVC.containerView.subviews {
                 subview.alpha = 0.5
