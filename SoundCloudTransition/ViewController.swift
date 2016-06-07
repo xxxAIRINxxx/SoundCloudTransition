@@ -98,13 +98,16 @@ final class ViewController: UIViewController {
         }
         
         // Dismiss
+      
+        self.animator.dismissalBeforeHandler = { [unowned self] containerView, transitionContext in
+            containerView.addSubview(self.view)
+            containerView.addSubview(self.modalVC.view)
+            
+            self.view.layoutIfNeeded()
+        }
         
         self.animator.dismissalAnimationHandler = { [unowned self] containerView, percentComplete in
             let containerViewHeight = self.modalVC.containerView.frame.size.height
-            
-            containerView.addSubview(self.view)
-            
-            self.view.layoutIfNeeded()
             
             self.modalVC.containerView.frame.origin.y = -containerViewHeight
             for subview in self.modalVC.containerView.subviews {
