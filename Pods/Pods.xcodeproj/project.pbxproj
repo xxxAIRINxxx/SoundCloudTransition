@@ -7,77 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		144C6B5F6D6152BF71364DB5528EAC19 /* ARNTransitionAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CA1CF0F96886238FF71606A6123B45 /* ARNTransitionAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B05DFCDC8FCD90E7C92303896420F77 /* Pods-SoundCloudTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C9FE7A9A380685792E84348A2A64E5E /* Pods-SoundCloudTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C5759C958D58B23632985FBEF87F059 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA88046016010B616689AEA6C13F03C7 /* ARNTransitionAnimator.swift */; };
-		967E52FB5315456044B3FC988D228E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5690625B550FF48C09D69BE7100D42 /* Foundation.framework */; };
-		C06D3F777D1AB037487CFB6A4D19E488 /* ARNTransitionAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FD892AA24BFA1323440214FF2E5CE1 /* ARNTransitionAnimator-dummy.m */; };
-		CE0808DBC06054668A7A0DEE156AF05E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5690625B550FF48C09D69BE7100D42 /* Foundation.framework */; };
-		D630410F974953B3EBDBA5D088EA2919 /* Pods-SoundCloudTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8D5995F549A493B526BFDA0565E04F /* Pods-SoundCloudTransition-dummy.m */; };
+		2A9BA2A16ABE1C6E65E3E1A34E935F2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		3F2A87B04B69371F210BD46DB5E0271C /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F591AF65DAE04D128C904D733EF9D9 /* ARNTransitionAnimator.swift */; };
+		4A253B87A46F3ADED6CEA18F4CE49D98 /* Pods-SoundCloudTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB20B711AF55F548D403374E9603D4 /* Pods-SoundCloudTransition-dummy.m */; };
+		9AE0501A0EE045786A4D92655EF63BC8 /* ARNTransitionAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E621B1E2AC3C8462F5BE5AF63D13A1B3 /* ARNTransitionAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1BD2322A3BB52F245D3EAFE92999C9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		C4A939EA92D18F87BEAABD31637B8A51 /* Pods-SoundCloudTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72547D3CFF4061C6C54D73A914C272BA /* Pods-SoundCloudTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7ADD7A0D7A79A99D7C0CF34CEC59D42 /* ARNTransitionAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64138D3A64A118206490A2ED298259E6 /* ARNTransitionAnimator-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		163607A431270BBB03CAEC16C78ADDC8 /* PBXContainerItemProxy */ = {
+		CE7905134EEF30AB1731085E7F23A753 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE0B38A6722B0FD7D0ADD5800FEF4B06;
+			remoteGlobalIDString = 887A1F399C1C0E18F1B9EEA0FD58F115;
 			remoteInfo = ARNTransitionAnimator;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E8902A69D09716805697A906EDE296C /* ARNTransitionAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARNTransitionAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		10B396EEE7F7602E17DDC8EE9D9E5523 /* ARNTransitionAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ARNTransitionAnimator.modulemap; sourceTree = "<group>"; };
+		13F1F42411E0D62C62EF144AFD1F89C7 /* ARNTransitionAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ARNTransitionAnimator.modulemap; sourceTree = "<group>"; };
+		2BEB20B711AF55F548D403374E9603D4 /* Pods-SoundCloudTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundCloudTransition-dummy.m"; sourceTree = "<group>"; };
+		2DBFEAF7FCB6270C340DB3E5FDBC7CD4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319247C02ED62A07C15AA5DB95CC4D94 /* Pods-SoundCloudTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundCloudTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		31979CB1F0E59C8917BACB1570B3D0EF /* ARNTransitionAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARNTransitionAnimator.xcconfig; sourceTree = "<group>"; };
 		4085BAE8256B1E8A3DEBBC7395631B06 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E5690625B550FF48C09D69BE7100D42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		589318D9E6CAF2668532AE3FFE07A74E /* Pods-SoundCloudTransition-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundCloudTransition-resources.sh"; sourceTree = "<group>"; };
 		6382CB90709C19CD8E9107EEEB27ABB4 /* Pods-SoundCloudTransition-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SoundCloudTransition-acknowledgements.markdown"; sourceTree = "<group>"; };
-		68CA1CF0F96886238FF71606A6123B45 /* ARNTransitionAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-umbrella.h"; sourceTree = "<group>"; };
-		7684C9A1C1091A00A7EE42F0B304C9BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86A3F4DDE12C6A3041C784A0667A64B9 /* Pods-SoundCloudTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundCloudTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		64138D3A64A118206490A2ED298259E6 /* ARNTransitionAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARNTransitionAnimator-dummy.m"; sourceTree = "<group>"; };
+		651BE28CC633ADD0193310DB97FA7A61 /* ARNTransitionAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ARNTransitionAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72547D3CFF4061C6C54D73A914C272BA /* Pods-SoundCloudTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundCloudTransition-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94275B9C87EE84C7DC20181F5E0958A9 /* Pods-SoundCloudTransition-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundCloudTransition-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C9FE7A9A380685792E84348A2A64E5E /* Pods-SoundCloudTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundCloudTransition-umbrella.h"; sourceTree = "<group>"; };
-		A5FD892AA24BFA1323440214FF2E5CE1 /* ARNTransitionAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARNTransitionAnimator-dummy.m"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDCDD25B067739D919643782D3857766 /* ARNTransitionAnimator-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ARNTransitionAnimator-Private.xcconfig"; sourceTree = "<group>"; };
-		C4DA0C35A232F54CFAD09ADF761FE1E4 /* Pods_SoundCloudTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloudTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BAA6048F843EF2C23CFA29DCB7A731 /* ARNTransitionAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-prefix.pch"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D09CCC02B51BF8B8794CE7AB4AA02EFD /* Pods-SoundCloudTransition-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundCloudTransition-frameworks.sh"; sourceTree = "<group>"; };
-		D8F4C4CED0652CF9B81B6F02079D360C /* ARNTransitionAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ARNTransitionAnimator.xcconfig; sourceTree = "<group>"; };
-		EA88046016010B616689AEA6C13F03C7 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = Source/ARNTransitionAnimator.swift; sourceTree = "<group>"; };
-		ECE2896EB5793CEB740C0035728080A5 /* Pods-SoundCloudTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundCloudTransition.release.xcconfig"; sourceTree = "<group>"; };
-		EE8D5995F549A493B526BFDA0565E04F /* Pods-SoundCloudTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundCloudTransition-dummy.m"; sourceTree = "<group>"; };
-		F1D757BC3AA959367BC2E932941B9181 /* ARNTransitionAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-prefix.pch"; sourceTree = "<group>"; };
+		E036316819846E9B6DECB723803ED2DF /* Pods_SoundCloudTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloudTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E621B1E2AC3C8462F5BE5AF63D13A1B3 /* ARNTransitionAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ARNTransitionAnimator-umbrella.h"; sourceTree = "<group>"; };
+		E7F591AF65DAE04D128C904D733EF9D9 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = Source/ARNTransitionAnimator.swift; sourceTree = "<group>"; };
+		EAA29457B3F1F555A81A976B3D21B0B3 /* Pods-SoundCloudTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundCloudTransition.release.xcconfig"; sourceTree = "<group>"; };
 		FF77036A1C95B456FBB4BB132D10FAC0 /* Pods-SoundCloudTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SoundCloudTransition.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7ADF69260028E96DED897948BB2D4BCB /* Frameworks */ = {
+		68C683F9AF2184F6FD16EE6C702A1F35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0808DBC06054668A7A0DEE156AF05E /* Foundation.framework in Frameworks */,
+				2A9BA2A16ABE1C6E65E3E1A34E935F2D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F9D0B0DC680C2840310355A20514846E /* Frameworks */ = {
+		EB9896D69BC8821951A25A7409F50D57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967E52FB5315456044B3FC988D228E6F /* Foundation.framework in Frameworks */,
+				C1BD2322A3BB52F245D3EAFE92999C9A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C3C586E3F171276E208B0B7A5D139BA /* ARNTransitionAnimator */ = {
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EA88046016010B616689AEA6C13F03C7 /* ARNTransitionAnimator.swift */,
-				A66A4F7727E2FC06095A1BFE00C65157 /* Support Files */,
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
-			path = ARNTransitionAnimator;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		4D51CDA7AE1444AC5E4823DD484D4656 /* Pods-SoundCloudTransition */ = {
@@ -87,12 +85,12 @@
 				FF77036A1C95B456FBB4BB132D10FAC0 /* Pods-SoundCloudTransition.modulemap */,
 				6382CB90709C19CD8E9107EEEB27ABB4 /* Pods-SoundCloudTransition-acknowledgements.markdown */,
 				94275B9C87EE84C7DC20181F5E0958A9 /* Pods-SoundCloudTransition-acknowledgements.plist */,
-				EE8D5995F549A493B526BFDA0565E04F /* Pods-SoundCloudTransition-dummy.m */,
+				2BEB20B711AF55F548D403374E9603D4 /* Pods-SoundCloudTransition-dummy.m */,
 				D09CCC02B51BF8B8794CE7AB4AA02EFD /* Pods-SoundCloudTransition-frameworks.sh */,
 				589318D9E6CAF2668532AE3FFE07A74E /* Pods-SoundCloudTransition-resources.sh */,
-				9C9FE7A9A380685792E84348A2A64E5E /* Pods-SoundCloudTransition-umbrella.h */,
-				86A3F4DDE12C6A3041C784A0667A64B9 /* Pods-SoundCloudTransition.debug.xcconfig */,
-				ECE2896EB5793CEB740C0035728080A5 /* Pods-SoundCloudTransition.release.xcconfig */,
+				72547D3CFF4061C6C54D73A914C272BA /* Pods-SoundCloudTransition-umbrella.h */,
+				319247C02ED62A07C15AA5DB95CC4D94 /* Pods-SoundCloudTransition.debug.xcconfig */,
+				EAA29457B3F1F555A81A976B3D21B0B3 /* Pods-SoundCloudTransition.release.xcconfig */,
 			);
 			name = "Pods-SoundCloudTransition";
 			path = "Target Support Files/Pods-SoundCloudTransition";
@@ -101,17 +99,9 @@
 		5333DCC0A051EDDD2F6634B39946F48C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C3C586E3F171276E208B0B7A5D139BA /* ARNTransitionAnimator */,
+				8F395551205277DBCA4D2AC8749A4AE8 /* ARNTransitionAnimator */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				4E5690625B550FF48C09D69BE7100D42 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		796877946890C79EF536DE5F7A4164F5 /* Targets Support Files */ = {
@@ -125,93 +115,101 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				5333DCC0A051EDDD2F6634B39946F48C /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				89994AA92D14D0CC78167A12BD045631 /* Products */,
 				796877946890C79EF536DE5F7A4164F5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A66A4F7727E2FC06095A1BFE00C65157 /* Support Files */ = {
+		89994AA92D14D0CC78167A12BD045631 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				10B396EEE7F7602E17DDC8EE9D9E5523 /* ARNTransitionAnimator.modulemap */,
-				D8F4C4CED0652CF9B81B6F02079D360C /* ARNTransitionAnimator.xcconfig */,
-				BDCDD25B067739D919643782D3857766 /* ARNTransitionAnimator-Private.xcconfig */,
-				A5FD892AA24BFA1323440214FF2E5CE1 /* ARNTransitionAnimator-dummy.m */,
-				F1D757BC3AA959367BC2E932941B9181 /* ARNTransitionAnimator-prefix.pch */,
-				68CA1CF0F96886238FF71606A6123B45 /* ARNTransitionAnimator-umbrella.h */,
-				7684C9A1C1091A00A7EE42F0B304C9BB /* Info.plist */,
+				651BE28CC633ADD0193310DB97FA7A61 /* ARNTransitionAnimator.framework */,
+				E036316819846E9B6DECB723803ED2DF /* Pods_SoundCloudTransition.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ARNTransitionAnimator";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F395551205277DBCA4D2AC8749A4AE8 /* ARNTransitionAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				E7F591AF65DAE04D128C904D733EF9D9 /* ARNTransitionAnimator.swift */,
+				D1D9D3FA6A0F316B91F258C6EBC3B122 /* Support Files */,
+			);
+			path = ARNTransitionAnimator;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+		D1D9D3FA6A0F316B91F258C6EBC3B122 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0E8902A69D09716805697A906EDE296C /* ARNTransitionAnimator.framework */,
-				C4DA0C35A232F54CFAD09ADF761FE1E4 /* Pods_SoundCloudTransition.framework */,
+				13F1F42411E0D62C62EF144AFD1F89C7 /* ARNTransitionAnimator.modulemap */,
+				31979CB1F0E59C8917BACB1570B3D0EF /* ARNTransitionAnimator.xcconfig */,
+				64138D3A64A118206490A2ED298259E6 /* ARNTransitionAnimator-dummy.m */,
+				B7BAA6048F843EF2C23CFA29DCB7A731 /* ARNTransitionAnimator-prefix.pch */,
+				E621B1E2AC3C8462F5BE5AF63D13A1B3 /* ARNTransitionAnimator-umbrella.h */,
+				2DBFEAF7FCB6270C340DB3E5FDBC7CD4 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/ARNTransitionAnimator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		06F0A213903D72A5F0FF90280B0424EC /* Headers */ = {
+		EC2F6130A212426B67CEDBC268B1EABC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144C6B5F6D6152BF71364DB5528EAC19 /* ARNTransitionAnimator-umbrella.h in Headers */,
+				C4A939EA92D18F87BEAABD31637B8A51 /* Pods-SoundCloudTransition-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD8F62F9E8E9B9FAD15BA2AB86FA06EA /* Headers */ = {
+		F3DBDCCF68B595D0A8657E4A2BFFE262 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B05DFCDC8FCD90E7C92303896420F77 /* Pods-SoundCloudTransition-umbrella.h in Headers */,
+				9AE0501A0EE045786A4D92655EF63BC8 /* ARNTransitionAnimator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6AB3FD760D0C7E5122EB3170AC9BACBF /* Pods-SoundCloudTransition */ = {
+		7F6078ED4F0EBC089BF407BE891EE3CA /* Pods-SoundCloudTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E091CDB50A36C203B6D2512BFABBCC9 /* Build configuration list for PBXNativeTarget "Pods-SoundCloudTransition" */;
+			buildConfigurationList = 70082ABF9AE4CA1194301AF4F7D3F546 /* Build configuration list for PBXNativeTarget "Pods-SoundCloudTransition" */;
 			buildPhases = (
-				3F235FC725E3313576611DBD56ECED2C /* Sources */,
-				7ADF69260028E96DED897948BB2D4BCB /* Frameworks */,
-				AD8F62F9E8E9B9FAD15BA2AB86FA06EA /* Headers */,
+				EDC4E97D9EC47C56C5D042C0F62E1302 /* Sources */,
+				EB9896D69BC8821951A25A7409F50D57 /* Frameworks */,
+				EC2F6130A212426B67CEDBC268B1EABC /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4C33FF2B74D1250A766022F321B734B4 /* PBXTargetDependency */,
+				927080C73ECEA09554CE962BBB763645 /* PBXTargetDependency */,
 			);
 			name = "Pods-SoundCloudTransition";
 			productName = "Pods-SoundCloudTransition";
-			productReference = C4DA0C35A232F54CFAD09ADF761FE1E4 /* Pods_SoundCloudTransition.framework */;
+			productReference = E036316819846E9B6DECB723803ED2DF /* Pods_SoundCloudTransition.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AE0B38A6722B0FD7D0ADD5800FEF4B06 /* ARNTransitionAnimator */ = {
+		887A1F399C1C0E18F1B9EEA0FD58F115 /* ARNTransitionAnimator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFC6FA4F078B45948C1E2AFDB139203C /* Build configuration list for PBXNativeTarget "ARNTransitionAnimator" */;
+			buildConfigurationList = E62BA98347D3CD8781DC0BDC83800279 /* Build configuration list for PBXNativeTarget "ARNTransitionAnimator" */;
 			buildPhases = (
-				3C9751F23F9FDD9EB6DE13A0F942F61A /* Sources */,
-				F9D0B0DC680C2840310355A20514846E /* Frameworks */,
-				06F0A213903D72A5F0FF90280B0424EC /* Headers */,
+				EDC299ED266202121C487BA4B61E26DE /* Sources */,
+				68C683F9AF2184F6FD16EE6C702A1F35 /* Frameworks */,
+				F3DBDCCF68B595D0A8657E4A2BFFE262 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -219,7 +217,7 @@
 			);
 			name = ARNTransitionAnimator;
 			productName = ARNTransitionAnimator;
-			productReference = 0E8902A69D09716805697A906EDE296C /* ARNTransitionAnimator.framework */;
+			productReference = 651BE28CC633ADD0193310DB97FA7A61 /* ARNTransitionAnimator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +226,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -239,164 +237,51 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 89994AA92D14D0CC78167A12BD045631 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE0B38A6722B0FD7D0ADD5800FEF4B06 /* ARNTransitionAnimator */,
-				6AB3FD760D0C7E5122EB3170AC9BACBF /* Pods-SoundCloudTransition */,
+				887A1F399C1C0E18F1B9EEA0FD58F115 /* ARNTransitionAnimator */,
+				7F6078ED4F0EBC089BF407BE891EE3CA /* Pods-SoundCloudTransition */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C9751F23F9FDD9EB6DE13A0F942F61A /* Sources */ = {
+		EDC299ED266202121C487BA4B61E26DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06D3F777D1AB037487CFB6A4D19E488 /* ARNTransitionAnimator-dummy.m in Sources */,
-				4C5759C958D58B23632985FBEF87F059 /* ARNTransitionAnimator.swift in Sources */,
+				D7ADD7A0D7A79A99D7C0CF34CEC59D42 /* ARNTransitionAnimator-dummy.m in Sources */,
+				3F2A87B04B69371F210BD46DB5E0271C /* ARNTransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F235FC725E3313576611DBD56ECED2C /* Sources */ = {
+		EDC4E97D9EC47C56C5D042C0F62E1302 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D630410F974953B3EBDBA5D088EA2919 /* Pods-SoundCloudTransition-dummy.m in Sources */,
+				4A253B87A46F3ADED6CEA18F4CE49D98 /* Pods-SoundCloudTransition-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C33FF2B74D1250A766022F321B734B4 /* PBXTargetDependency */ = {
+		927080C73ECEA09554CE962BBB763645 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ARNTransitionAnimator;
-			target = AE0B38A6722B0FD7D0ADD5800FEF4B06 /* ARNTransitionAnimator */;
-			targetProxy = 163607A431270BBB03CAEC16C78ADDC8 /* PBXContainerItemProxy */;
+			target = 887A1F399C1C0E18F1B9EEA0FD58F115 /* ARNTransitionAnimator */;
+			targetProxy = CE7905134EEF30AB1731085E7F23A753 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		079A262E6BCBFF0CFF40408D0A3DA5FD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86A3F4DDE12C6A3041C784A0667A64B9 /* Pods-SoundCloudTransition.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundCloudTransition/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_SoundCloudTransition;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		34DDDA0DA7A790438A69107E4F40BBAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCDD25B067739D919643782D3857766 /* ARNTransitionAnimator-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ARNTransitionAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		60A4C40DE072361FFDDED504F3BB9B25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECE2896EB5793CEB740C0035728080A5 /* Pods-SoundCloudTransition.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundCloudTransition/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_SoundCloudTransition;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7E09599DCDFF75048A03B4C6995CD6BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDCDD25B067739D919643782D3857766 /* ARNTransitionAnimator-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ARNTransitionAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -411,10 +296,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -432,10 +319,73 @@
 			};
 			name = Debug;
 		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		4EBE924FCC8394578C9E40AF50D21460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA29457B3F1F555A81A976B3D21B0B3 /* Pods-SoundCloudTransition.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundCloudTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SoundCloudTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5D0A72DFCB5CC67F7C5145E171DA9C1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31979CB1F0E59C8917BACB1570B3D0EF /* ARNTransitionAnimator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ARNTransitionAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -452,7 +402,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -466,32 +419,96 @@
 			};
 			name = Release;
 		};
+		AF6CC7BCC8053DB42E303BE2AF55530B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319247C02ED62A07C15AA5DB95CC4D94 /* Pods-SoundCloudTransition.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundCloudTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SoundCloudTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BB336E44E341EFB051C2F2635E27FB12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31979CB1F0E59C8917BACB1570B3D0EF /* ARNTransitionAnimator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ARNTransitionAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ARNTransitionAnimator/ARNTransitionAnimator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ARNTransitionAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E091CDB50A36C203B6D2512BFABBCC9 /* Build configuration list for PBXNativeTarget "Pods-SoundCloudTransition" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				079A262E6BCBFF0CFF40408D0A3DA5FD /* Debug */,
-				60A4C40DE072361FFDDED504F3BB9B25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFC6FA4F078B45948C1E2AFDB139203C /* Build configuration list for PBXNativeTarget "ARNTransitionAnimator" */ = {
+		70082ABF9AE4CA1194301AF4F7D3F546 /* Build configuration list for PBXNativeTarget "Pods-SoundCloudTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34DDDA0DA7A790438A69107E4F40BBAD /* Debug */,
-				7E09599DCDFF75048A03B4C6995CD6BA /* Release */,
+				AF6CC7BCC8053DB42E303BE2AF55530B /* Debug */,
+				4EBE924FCC8394578C9E40AF50D21460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E62BA98347D3CD8781DC0BDC83800279 /* Build configuration list for PBXNativeTarget "ARNTransitionAnimator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB336E44E341EFB051C2F2635E27FB12 /* Debug */,
+				5D0A72DFCB5CC67F7C5145E171DA9C1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
