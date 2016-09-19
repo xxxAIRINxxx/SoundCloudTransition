@@ -13,17 +13,24 @@ final class ModalViewController: UIViewController {
     @IBOutlet weak var containerView : UIView!
     @IBOutlet weak var tabBar : UITabBar!
     
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    deinit {
+        print("deinit ModalViewController")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("ModalViewController viewWillAppear")
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("ModalViewController viewWillDisappear")
+    }
+}
+
+extension ModalViewController : UITabBarDelegate {
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
