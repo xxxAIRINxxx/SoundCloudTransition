@@ -16,6 +16,7 @@
 		563938C11A9DF716003BF0C9 /* SoundCloudTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */; };
 		563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */; };
 		7A575E131AA1A99A0068F641 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A575E121AA1A99A0068F641 /* image.jpg */; };
+		911A35DD1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCloudTransitionTests.swift; sourceTree = "<group>"; };
 		563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		7A575E121AA1A99A0068F641 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudTransitionAnimation.swift; sourceTree = "<group>"; };
 		D8942ACA9FDC2151E73AC995 /* Pods-SoundCloudTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloudTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.debug.xcconfig"; sourceTree = "<group>"; };
 		FF5F55271D7ACEB82D5998ED /* Pods_SoundCloudTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloudTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,12 +98,11 @@
 		563938A71A9DF716003BF0C9 /* SoundCloudTransition */ = {
 			isa = PBXGroup;
 			children = (
+				911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */,
 				563938AA1A9DF716003BF0C9 /* AppDelegate.swift */,
 				563938AC1A9DF716003BF0C9 /* ViewController.swift */,
 				563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */,
-				7A575E121AA1A99A0068F641 /* image.jpg */,
 				563938AE1A9DF716003BF0C9 /* Main.storyboard */,
-				563938B11A9DF716003BF0C9 /* Images.xcassets */,
 				563938B31A9DF716003BF0C9 /* LaunchScreen.xib */,
 				563938A81A9DF716003BF0C9 /* Supporting Files */,
 			);
@@ -111,6 +112,8 @@
 		563938A81A9DF716003BF0C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7A575E121AA1A99A0068F641 /* image.jpg */,
+				563938B11A9DF716003BF0C9 /* Images.xcassets */,
 				563938A91A9DF716003BF0C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -191,14 +194,18 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = xxxAIRINxxx;
 				TargetAttributes = {
 					563938A41A9DF716003BF0C9 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = P599PJHMNF;
+						LastSwiftMigration = 0800;
 					};
 					563938B91A9DF716003BF0C9 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = P599PJHMNF;
+						LastSwiftMigration = 0800;
 						TestTargetID = 563938A41A9DF716003BF0C9;
 					};
 				};
@@ -271,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C4286E0359CAE21DEFAA7330 /* [CP] Copy Pods Resources */ = {
@@ -296,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911A35DD1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift in Sources */,
 				563938AD1A9DF716003BF0C9 /* ViewController.swift in Sources */,
 				563938AB1A9DF716003BF0C9 /* AppDelegate.swift in Sources */,
 				563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */,
@@ -353,8 +361,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -363,6 +373,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -375,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -396,8 +407,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -405,15 +418,17 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -422,11 +437,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8942ACA9FDC2151E73AC995 /* Pods-SoundCloudTransition.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P599PJHMNF;
 				INFOPLIST_FILE = SoundCloudTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -434,11 +452,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 55960E5D175971BF0C9C5AE0 /* Pods-SoundCloudTransition.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P599PJHMNF;
 				INFOPLIST_FILE = SoundCloudTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -446,10 +467,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = P599PJHMNF;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -458,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCloudTransition.app/SoundCloudTransition";
 			};
 			name = Debug;
@@ -466,14 +486,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				DEVELOPMENT_TEAM = P599PJHMNF;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SoundCloudTransitionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoundCloudTransition.app/SoundCloudTransition";
 			};
 			name = Release;
