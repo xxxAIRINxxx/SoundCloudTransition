@@ -16,6 +16,7 @@
 		563938C11A9DF716003BF0C9 /* SoundCloudTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */; };
 		563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */; };
 		7A575E131AA1A99A0068F641 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A575E121AA1A99A0068F641 /* image.jpg */; };
+		911A35DD1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		563938C01A9DF716003BF0C9 /* SoundCloudTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCloudTransitionTests.swift; sourceTree = "<group>"; };
 		563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		7A575E121AA1A99A0068F641 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudTransitionAnimation.swift; sourceTree = "<group>"; };
 		D8942ACA9FDC2151E73AC995 /* Pods-SoundCloudTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloudTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundCloudTransition/Pods-SoundCloudTransition.debug.xcconfig"; sourceTree = "<group>"; };
 		FF5F55271D7ACEB82D5998ED /* Pods_SoundCloudTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloudTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,12 +98,11 @@
 		563938A71A9DF716003BF0C9 /* SoundCloudTransition */ = {
 			isa = PBXGroup;
 			children = (
+				911A35DC1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift */,
 				563938AA1A9DF716003BF0C9 /* AppDelegate.swift */,
 				563938AC1A9DF716003BF0C9 /* ViewController.swift */,
 				563938CC1A9DFB89003BF0C9 /* ModalViewController.swift */,
-				7A575E121AA1A99A0068F641 /* image.jpg */,
 				563938AE1A9DF716003BF0C9 /* Main.storyboard */,
-				563938B11A9DF716003BF0C9 /* Images.xcassets */,
 				563938B31A9DF716003BF0C9 /* LaunchScreen.xib */,
 				563938A81A9DF716003BF0C9 /* Supporting Files */,
 			);
@@ -111,6 +112,8 @@
 		563938A81A9DF716003BF0C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7A575E121AA1A99A0068F641 /* image.jpg */,
+				563938B11A9DF716003BF0C9 /* Images.xcassets */,
 				563938A91A9DF716003BF0C9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911A35DD1D8FF5B600BBC338 /* SoundCloudTransitionAnimation.swift in Sources */,
 				563938AD1A9DF716003BF0C9 /* ViewController.swift in Sources */,
 				563938AB1A9DF716003BF0C9 /* AppDelegate.swift in Sources */,
 				563938CD1A9DFB89003BF0C9 /* ModalViewController.swift in Sources */,
