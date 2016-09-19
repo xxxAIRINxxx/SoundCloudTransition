@@ -19,39 +19,41 @@ final class TransitionAnimator {
         self.animation = animation
     }
     
-    func willAnimation(containerView: UIView?) {
-        self.animation.willAnimation(self.transitionType, containerView: containerView)
-        
+    func willAnimation(_ containerView: UIView) {
         if self.transitionType.isPresenting {
-            containerView?.addSubview(self.fromVC.view)
-            containerView?.addSubview(self.toVC.view)
+            containerView.addSubview(self.fromVC.view)
+            containerView.addSubview(self.toVC.view)
         } else {
-            containerView?.addSubview(self.toVC.view)
-            containerView?.addSubview(self.fromVC.view)
+            containerView.addSubview(self.toVC.view)
+            containerView.addSubview(self.fromVC.view)
         }
         self.fromVC.view.setNeedsLayout()
         self.fromVC.view.layoutIfNeeded()
         self.toVC.view.setNeedsLayout()
         self.toVC.view.layoutIfNeeded()
+        
+        self.animation.willAnimation(self.transitionType, containerView: containerView)
     }
     
-    func animate(duration: NSTimeInterval, animations: (Void -> Void), completion: ((Bool) -> Void)? = nil) {
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+    func animate(_ duration: TimeInterval, animations: @escaping ((Void) -> Void), completion: ((Bool) -> Void)? = nil) {
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
-        UIView.animateWithDuration(duration,
-                                   delay: 0.0,
-                                   options: .CurveEaseOut,
-                                   animations: animations) { finished in
-                                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                                    completion?(finished)
+        UIView.animate(withDuration: duration,
+                       delay: 0.0,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseOut,
+                       animations: animations) { finished in
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        completion?(finished)
         }
     }
     
-    func updateAnimation(percentComplete: CGFloat) {
+    func updateAnimation(_ percentComplete: CGFloat) {
         self.animation.updateAnimation(self.transitionType, percentComplete: percentComplete)
     }
     
-    func finishAnimation(didComplete: Bool) {
+    func finishAnimation(_ didComplete: Bool) {
         if didComplete {
             if !self.transitionType.isPresenting {
                 self.fromVC.view.removeFromSuperview()
@@ -65,11 +67,11 @@ final class TransitionAnimator {
 
 extension TransitionAnimator {
     
-    var fromVC: UIViewController! {
-        return self.transitionType.isPresenting ? self.animation.sourceVC : self.animation.destVC
+    var fromVC: UIViewController {
+        return self.transitionType.isPresenting ? self.animation.sourceVC() : self.animation.destVC()
     }
     
-    var toVC: UIViewController! {
-        return self.transitionType.isPresenting ? self.animation.destVC : self.animation.sourceVC
+    var toVC: UIViewController {
+        return self.transitionType.isPresenting ? self.animation.destVC() : self.animation.sourceVC()
     }
 }
