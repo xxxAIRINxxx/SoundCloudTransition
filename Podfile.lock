@@ -1,22 +1,12 @@
 PODS:
-  - ARNTransitionAnimator (2.0.0)
+  - ARNTransitionAnimator (2.0.2)
 
 DEPENDENCIES:
-  - ARNTransitionAnimator (from `https://github.com/xxxAIRINxxx/ARNTransitionAnimator.git`, tag `2.0.0`)
-
-EXTERNAL SOURCES:
-  ARNTransitionAnimator:
-    :git: https://github.com/xxxAIRINxxx/ARNTransitionAnimator.git
-    :tag: 2.0.0
-
-CHECKOUT OPTIONS:
-  ARNTransitionAnimator:
-    :git: https://github.com/xxxAIRINxxx/ARNTransitionAnimator.git
-    :tag: 2.0.0
+  - ARNTransitionAnimator
 
 SPEC CHECKSUMS:
-  ARNTransitionAnimator: baec608d5c7e8ba5e49d36f0d771773e711ec40a
+  ARNTransitionAnimator: b3b02a45e65e08d0ddd478972e7872fccefe817c
 
-PODFILE CHECKSUM: 6fd5d9cbffe9ca5ed35faad3b11a21dd67ba294a
+PODFILE CHECKSUM: 492b3d4f84619679b777c3455009eb7f917a8a43
 
 COCOAPODS: 1.1.0.rc.2

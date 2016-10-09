@@ -42,8 +42,8 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
         } else {
             
         }
-        
     }
+    
     func updateAnimation(_ transitionType: TransitionType, percentComplete: CGFloat) {
         if transitionType.isPresenting {
             let containerViewHeight = self.modalVC.containerView.frame.size.height

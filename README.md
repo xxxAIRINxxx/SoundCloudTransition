@@ -22,7 +22,7 @@ This sample have created as a showcase of ARNTransitionAnimator.
 ## Requirements
 
 * Xcode 8.0
-* iOS 9.0+
+* iOS 8.0+
 * Swift 3.0
 
 
