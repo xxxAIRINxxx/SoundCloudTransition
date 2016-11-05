@@ -1,12 +1,12 @@
 PODS:
-  - ARNTransitionAnimator (2.0.2)
+  - ARNTransitionAnimator (2.0.3)
 
 DEPENDENCIES:
   - ARNTransitionAnimator
 
 SPEC CHECKSUMS:
-  ARNTransitionAnimator: b3b02a45e65e08d0ddd478972e7872fccefe817c
+  ARNTransitionAnimator: 51c63c904e61435d1ff741722ec49819cd38fc4f
 
 PODFILE CHECKSUM: 492b3d4f84619679b777c3455009eb7f917a8a43
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

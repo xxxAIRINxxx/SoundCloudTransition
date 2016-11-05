@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		088FAB9D2ECB3CE5866DE23A8AD13389 /* TransitionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F8B4491FA88D32F59FCFA09DAADC0 /* TransitionAnimatable.swift */; };
+		09471D2E669E2728C822AEE4C812EF5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		1B054F33C8FBA0E6D7BC9A7ADC34CEED /* TransitionGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6001BC7086182EF5A62831E65AC412 /* TransitionGestureHandler.swift */; };
 		477229F5F5A6EAB14B3DC9604867DF99 /* ARNTransitionAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9312B5FA05577D1B410E037F071EE457 /* ARNTransitionAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A253B87A46F3ADED6CEA18F4CE49D98 /* Pods-SoundCloudTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB20B711AF55F548D403374E9603D4 /* Pods-SoundCloudTransition-dummy.m */; };
 		8E397D28A3081D16746E5F51870A6A11 /* InteractiveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D4451D46FB336196F728C3C44B428A /* InteractiveTransitioning.swift */; };
 		B3D6C50815351F9AC279E0109845D6F8 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F87BA7E25B74ED0CD79E8CBF3B1000 /* TransitionAnimator.swift */; };
-		C1BD2322A3BB52F245D3EAFE92999C9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		C4A939EA92D18F87BEAABD31637B8A51 /* Pods-SoundCloudTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 72547D3CFF4061C6C54D73A914C272BA /* Pods-SoundCloudTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6AA8A0994404C6ED8818481DC02A44C /* ARNTransitionAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 370178D5276B3649550B27BC52F6B0AF /* ARNTransitionAnimator-dummy.m */; };
 		DB100C3E130E45E4AE3B5EDDF70A528E /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76577FB420567508A842284D1E0EA7AC /* ARNTransitionAnimator.swift */; };
-		E6C0DBE23C1843E6B44964394AC94D4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E27B766E59DF83630BFC86FF0E7C8910 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		FE9FAE03FE4735813A404B8F5893A089 /* AnimatedTransitioning .swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F63455E161DA56EE26156EFE0DD70 /* AnimatedTransitioning .swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94275B9C87EE84C7DC20181F5E0958A9 /* Pods-SoundCloudTransition-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundCloudTransition-acknowledgements.plist"; sourceTree = "<group>"; };
 		C7D4451D46FB336196F728C3C44B428A /* InteractiveTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InteractiveTransitioning.swift; path = Source/InteractiveTransitioning.swift; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D09CCC02B51BF8B8794CE7AB4AA02EFD /* Pods-SoundCloudTransition-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundCloudTransition-frameworks.sh"; sourceTree = "<group>"; };
 		D20F63455E161DA56EE26156EFE0DD70 /* AnimatedTransitioning .swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AnimatedTransitioning .swift"; path = "Source/AnimatedTransitioning .swift"; sourceTree = "<group>"; };
 		DE8F8B4491FA88D32F59FCFA09DAADC0 /* TransitionAnimatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionAnimatable.swift; path = Source/TransitionAnimatable.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6C0DBE23C1843E6B44964394AC94D4A /* Foundation.framework in Frameworks */,
+				E27B766E59DF83630BFC86FF0E7C8910 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BD2322A3BB52F245D3EAFE92999C9A /* Foundation.framework in Frameworks */,
+				09471D2E669E2728C822AEE4C812EF5C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,14 +86,6 @@
 				8AA407CC6CDB088A9C1F232F943F5914 /* ARNTransitionAnimator */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		464725EBD345D7F5F492CFC3C52C7188 /* Support Files */ = {
@@ -126,6 +118,14 @@
 			);
 			name = "Pods-SoundCloudTransition";
 			path = "Target Support Files/Pods-SoundCloudTransition";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		796877946890C79EF536DE5F7A4164F5 /* Targets Support Files */ = {
@@ -173,7 +173,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
