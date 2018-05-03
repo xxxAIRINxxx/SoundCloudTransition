@@ -15,7 +15,7 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
     fileprivate weak var rootVC: ViewController!
     fileprivate weak var modalVC: ModalViewController!
     
-    var completion: ((Void) -> Void)?
+    var completion: (() -> Void)?
     
     deinit {
         print("deinit SoundCloudTransitionAnimation")
@@ -73,7 +73,6 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
             self.rootVC.imageView.alpha = 1.0
             self.rootVC.imageView.transform = CGAffineTransform.identity
         }
-        
     }
     
     func finishAnimation(_ transitionType: TransitionType, didComplete: Bool) {

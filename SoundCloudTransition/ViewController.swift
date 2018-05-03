@@ -48,10 +48,8 @@ final class ViewController: UIViewController {
             self?.setupAnimator()
         }
         
-        let gestureHandler = TransitionGestureHandler(targetVC: self, direction: .bottom)
-        gestureHandler.registerGesture(self.view)
-        
         self.animator = ARNTransitionAnimator(duration: 0.4, animation: animation)
+        let gestureHandler = TransitionGestureHandler(targetVC: self, direction: .bottom)
         self.animator?.registerInteractiveTransitioning(.present, gestureHandler: gestureHandler)
         
         self.modalVC.transitioningDelegate = self.animator

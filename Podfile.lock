@@ -1,12 +1,16 @@
 PODS:
-  - ARNTransitionAnimator (2.0.3)
+  - ARNTransitionAnimator (3.0.6)
 
 DEPENDENCIES:
   - ARNTransitionAnimator
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ARNTransitionAnimator
+
 SPEC CHECKSUMS:
-  ARNTransitionAnimator: 51c63c904e61435d1ff741722ec49819cd38fc4f
+  ARNTransitionAnimator: 6320bc6d3ab66c159ae2a06cad7c7725a2ec3c15
 
-PODFILE CHECKSUM: 492b3d4f84619679b777c3455009eb7f917a8a43
+PODFILE CHECKSUM: 93a9a9f22167a9607f6c8051b37365774d32008b
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.0
