@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     
     private var animator : ARNTransitionAnimator?
     private var modalVC : ModalViewController!
+    private var modalTab : UITabBarController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,23 +36,26 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func tapButton() {
-        self.present(self.modalVC, animated: true, completion: nil)
+        self.present(self.modalTab, animated: true, completion: nil)
     }
 
     func setupAnimator() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.modalVC = storyboard.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController
-        self.modalVC.modalPresentationStyle = .fullScreen
+        let modalTab = storyboard.instantiateViewController(withIdentifier: "Tab") as! UITabBarController
+        self.modalTab = modalTab
+        self.modalVC = modalTab.viewControllers?.first as? ModalViewController
+        self.modalVC.view.layoutIfNeeded()
         
-        let animation = SoundCloudTransitionAnimation(rootVC: self, modalVC: self.modalVC)
+        let animation = SoundCloudTransitionAnimation(self, self.modalTab, self.modalVC)
         animation.completion = { [weak self] in
             self?.setupAnimator()
         }
         
-        self.animator = ARNTransitionAnimator(duration: 0.4, animation: animation)
+        self.animator = ARNTransitionAnimator(duration: 1.2, animation: animation)
         let gestureHandler = TransitionGestureHandler(targetVC: self, direction: .bottom)
         self.animator?.registerInteractiveTransitioning(.present, gestureHandler: gestureHandler)
         
-        self.modalVC.transitioningDelegate = self.animator
+        self.modalTab.modalPresentationStyle = .overCurrentContext
+        self.modalTab.transitioningDelegate = self.animator
     }
 }

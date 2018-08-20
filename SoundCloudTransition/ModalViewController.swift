@@ -11,7 +11,6 @@ import UIKit
 final class ModalViewController: UIViewController {
     
     @IBOutlet weak var containerView : UIView!
-    @IBOutlet weak var tabBar : UITabBar!
     
     deinit {
         print("deinit ModalViewController")
@@ -28,9 +27,20 @@ final class ModalViewController: UIViewController {
     }
 }
 
-extension ModalViewController : UITabBarDelegate {
+final class ContentController: UITableViewController {
     
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "select to start of dismiss 😃"
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         self.dismiss(animated: true, completion: nil)
     }
 }

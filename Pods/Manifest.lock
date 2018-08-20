@@ -5,7 +5,7 @@ DEPENDENCIES:
   - ARNTransitionAnimator
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - ARNTransitionAnimator
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 93a9a9f22167a9607f6c8051b37365774d32008b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

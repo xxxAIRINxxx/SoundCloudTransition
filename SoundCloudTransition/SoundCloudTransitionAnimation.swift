@@ -13,6 +13,7 @@ import ARNTransitionAnimator
 final class SoundCloudTransitionAnimation : TransitionAnimatable {
     
     fileprivate weak var rootVC: ViewController!
+    fileprivate weak var modalTab: UITabBarController!
     fileprivate weak var modalVC: ModalViewController!
     
     var completion: (() -> Void)?
@@ -21,12 +22,25 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
         print("deinit SoundCloudTransitionAnimation")
     }
     
-    init(rootVC: ViewController, modalVC: ModalViewController) {
+    init(_ rootVC: ViewController, _ modalTab: UITabBarController, _ modalVC: ModalViewController) {
         self.rootVC = rootVC
+        self.modalTab = modalTab
         self.modalVC = modalVC
     }
     
+    public func prepareContainer(_ transitionType: TransitionType, containerView: UIView, from fromVC: UIViewController, to toVC: UIViewController) {
+        if transitionType.isPresenting {
+            containerView.addSubview(toVC.view)
+        }
+        fromVC.view.setNeedsLayout()
+        fromVC.view.layoutIfNeeded()
+        toVC.view.setNeedsLayout()
+        toVC.view.layoutIfNeeded()
+    }
+    
     func willAnimation(_ transitionType: TransitionType, containerView: UIView) {
+        let tabBar = self.modalTab.tabBar
+        
         if transitionType.isPresenting {
             let containerViewHeight = self.modalVC.containerView.frame.size.height
             self.modalVC.containerView.frame.origin.y = -containerViewHeight
@@ -34,17 +48,17 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
                 subview.alpha = 0.5
             }
             
-            self.modalVC.tabBar.frame.origin.y = containerView.frame.size.height
-            self.modalVC.tabBar.alpha = 0.0
+            tabBar.frame.origin.y = containerView.frame.size.height
+            tabBar.alpha = 0.0
             self.rootVC.button.alpha = 1.0
             self.rootVC.imageView.alpha = 1.0
             self.rootVC.imageView.transform = CGAffineTransform.identity
-        } else {
-            
         }
     }
     
     func updateAnimation(_ transitionType: TransitionType, percentComplete: CGFloat) {
+        let tabBar = self.modalTab.tabBar
+        
         if transitionType.isPresenting {
             let containerViewHeight = self.modalVC.containerView.frame.size.height
             
@@ -53,8 +67,8 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
                 subview.alpha = 0.5 + 0.5 * percentComplete
             }
             
-            self.modalVC.tabBar.frame.origin.y = self.modalVC.view.frame.size.height - self.modalVC.tabBar.frame.size.height * percentComplete
-            self.modalVC.tabBar.alpha = 1.0 * percentComplete
+            tabBar.frame.origin.y = self.modalVC.view.frame.size.height - tabBar.frame.size.height * percentComplete
+            tabBar.alpha = 1.0 * percentComplete
             self.rootVC.button.alpha = 1.0 - 1.5 * percentComplete
             self.rootVC.imageView.alpha = 1.0 - 0.2 * percentComplete
             self.rootVC.imageView.transform = CGAffineTransform.identity
@@ -67,8 +81,8 @@ final class SoundCloudTransitionAnimation : TransitionAnimatable {
                 subview.alpha = 0.5
             }
             
-            self.modalVC.tabBar.frame.origin.y = self.modalVC.view.frame.size.height
-            self.modalVC.tabBar.alpha = 0.0
+            tabBar.frame.origin.y = self.modalVC.view.frame.size.height
+            tabBar.alpha = 0.0
             self.rootVC.button.alpha = 1.0
             self.rootVC.imageView.alpha = 1.0
             self.rootVC.imageView.transform = CGAffineTransform.identity
@@ -86,5 +100,5 @@ extension SoundCloudTransitionAnimation {
     
     func sourceVC() -> UIViewController { return self.rootVC }
     
-    func destVC() -> UIViewController { return self.modalVC }
+    func destVC() -> UIViewController { return self.modalTab }
 }
